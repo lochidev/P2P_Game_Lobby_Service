@@ -6,7 +6,7 @@ This program acts as a meeting point (a "Lobby") for hosts on the internet. For 
 
 2. Discovery - The Lobby maintains an active registry of waiting peers. STL containers (like std::vector or std::map) were used to keep track of all the connected hosts. The focus was placed on using RAII principles and Smart Pointers (std::unique_ptr) to ensure that if a host disconnects or a thread terminates, there are no memory leaks.
 
-3. Coordination - Once two hosts are matched, the Lobby sends the IP/Port info to both peers. This uses TCP sockets to ensure the handshake data is delivered reliably. After the "introduction," the Lobby drops the connection so the peers can talk directly.
+3. Coordination - Once two hosts are matched, the Lobby sends the IP/Port info to both peers. This uses TCP sockets to ensure the handshake data is delivered reliably. Then the Lobby drops the connection so the peers can talk directly.
 
 This might be a good indication of my knowledge on C++ STL and multi-threading. I learned alot working on this project
 
